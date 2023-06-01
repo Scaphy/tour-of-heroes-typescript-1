@@ -1,0 +1,3 @@
+.characters--list li:hover {
+  background-color: hsl(244, 31%, 80%);
+}

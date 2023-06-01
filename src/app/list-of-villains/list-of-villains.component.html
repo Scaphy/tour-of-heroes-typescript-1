@@ -1,0 +1,20 @@
+<ul class="characters--list">
+  <li *ngFor="let villain of villain" [class.selected]="selectedVillain == villain" (click)="selectVillain(villain)"><span class="badge">{{ villain
+    .id }}</span> {{ villain.name }} {{villain.superPower}}</li>
+    
+</ul>
+<div *ngIf="selectedVillain"> 
+  <h2>Détails de {{selectedVillain.name | uppercase}} : </h2>
+  <div><span>id: </span>{{selectedVillain.id}}</div>
+  </div>
+<app-villain-details *ngIf="selectedVillain" [villain]="selectedVillain"></app-villain-details>
+
+<!--<ul>
+  <li>
+    Un villalin : {{ nom }} qui à un :  {{ superPower}}
+  </li>
+  <li> et qui ressemble {{ photo }}</li>
+
+<li><img src="{{ imageUrl }}" alt="{{ title }}"></li>
+
+<li><img [src]="imageUrl" [alt]="title"></li>-->

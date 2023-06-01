@@ -1,0 +1,25 @@
+<ul class="characters--list">
+  <li *ngFor="let hero of heroes" [class.selected]="selectedHero == hero" (click)="selectHero(hero)"><span class="badge">{{ hero
+    .id }}</span> {{ hero.name }} {{hero.superPower}}</li>
+    
+</ul>
+<div *ngIf="selectedHero">
+  <h2>Détails de {{selectedHero.name | uppercase}} : </h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  </div>
+  <app-hero-details *ngIf="selectedHero" [hero]="selectedHero"></app-hero-details>
+<!--<div>
+  <p *ngFor="let hero of heroes">
+<span>{{hero.name}}</span> Vole !!!</p>
+</div>-->
+
+<!--<div>
+  <p *ngFor="let vilain of vilains">
+<span (click)="volerVilain(vilain)">Voler</span></p>
+</div>
+<div>
+  <p *ngFor="let vilain of vilains">
+<span>{{vilain.name}}</span> Vole !!!</p>
+</div>-->
+
+
